@@ -1,0 +1,67 @@
+MiniFramework
+===================================================================================
+
+1 - Routing
+2 - Request/Response
+3 - Templating
+
+
+------------------------------------------------------------------------------------
+SERVER :
+
+$ php -S localhost:3000 -t public -d display_errors=1
+
+------------------------------------------------------------------------------------
+$ php -S localhost:3000 index.php
+PHP 7.2.24-0ubuntu0.19.04.1 Development Server started at Thu Feb  6 15:37:16 2020
+Listening on http://localhost:3000
+Document root is /var/www/app-micro-framework
+Press Ctrl-C to quit.
+
+------------------------------------------------------------------------------------
+$ make static
+php -S localhost:3000
+PHP 7.2.24-0ubuntu0.19.04.1 Development Server started at Thu Feb  6 15:36:59 2020
+Listening on http://localhost:3000
+Document root is /var/www/app-micro-framework
+Press Ctrl-C to quit.
+
+
+The next command will be show :
+$ curl localhost:3000/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Application Micro-Framework</title>
+</head>
+<body>
+   <h1>Hello Friends !</h1>
+</body>
+</html>
+
+-----------------------------------------------------------------
+$ make dynamic
+php -S localhost:3000 index.php
+PHP 7.2.24-0ubuntu0.19.04.1 Development Server started at Thu Feb  6 15:36:59 2020
+Listening on http://localhost:3000
+Document root is /var/www/app-micro-framework
+Press Ctrl-C to quit.
+
+$ curl localhost:3000
+<p>Welcome to PHP</p>j
+
+
+$ curl localhost:3000/about
+about compagny
+
+-----------------------------------------------------------------
+Look Headers :
+$ curl --head localhost:3000
+HTTP/1.1 200 OK
+Host: localhost:3000
+Date: Thu, 06 Feb 2020 13:07:48 GMT
+Connection: close
+X-Powered-By: PHP/7.2.24-0ubuntu0.19.04.1
+Content-type: text/html; charset=UTF-8
+
+
