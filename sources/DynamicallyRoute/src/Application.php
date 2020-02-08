@@ -20,7 +20,7 @@ class Application
      * Application constructor.
      * @param array $routes
      */
-    public function __construct(?array $routes = [])
+    public function __construct(?array $routes)
     {
         $this->routes = $routes;
     }
@@ -58,12 +58,6 @@ class Application
         foreach ($this->handlers as $item)
         {
             list($route, $handlerMethod, $handler) = $item;
-            /*
-            echo '<pre>';
-            print_r($item);
-            echo '<pre>';
-            die;
-            */
             $preparedRoute = str_replace('/', '\/',$route);
             $matches = [];
 
@@ -88,14 +82,10 @@ class Application
     {
         /* $this->routes[$method][$route] = $handler; */
         /* $this->handlers[] = compact('method', 'route', 'handler'); */
-           $this->handlers[] = compact('route', 'method', 'handler');
-
-           /*
-           $this->handlers[] = [
-              'route' => $route,
-              'handlerMethod' => $method,
-              'handler' => $handler
-           ];
-           */
+        $this->handlers[] = [
+          'route' => $route,
+          'handlerMethod' => $method,
+          'handler' => $handler
+        ];
     }
 }

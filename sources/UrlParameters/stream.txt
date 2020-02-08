@@ -1,0 +1,5 @@
+METHOD GET :
+$ curl -v localhost:8080?page=3&sort=1&a=b
+
+METHOD POST :
+$ curl -v -XPOST localhost:8080?page=5

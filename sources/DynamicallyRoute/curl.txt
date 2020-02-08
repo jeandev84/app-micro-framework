@@ -1,0 +1,9 @@
+$ curl localhost:8080/users/3
+$ curl localhost:8080/users/100
+{"id": "100"}
+
+$ curl localhost:8080/users/100/article/2
+{"userId": "100", "id": "2"}
+
+$ curl localhost:8080/users/100/article/slug-article-2
+{"userId": "100", "slug": "slug-article-2"}

@@ -1,0 +1,1 @@
+$ curl -L -v -XPOST localhost:8080/sign_in
