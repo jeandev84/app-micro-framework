@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>New User</h1>
+<div>
+    <a href="/users">users list</a>
+</div>
+<br>
+
+<!-- BEGIN -->
+<form action="/users" method="post">
+    <div>
+        <b>Email</b>
+        <input type="text" name="user[email]" value="<?= $user['email'] ?>">
+        <?php if(isset($errors['email'])): ?>
+          <div style="color: red"><?= $errors['email'] ?></div>
+        <?php endif; ?>
+    </div>
+
+    <br>
+
+    <div>
+     First Name
+        <input type="text" name="user[first_name]" value="<?= $user['first_name'] ?>">
+    </div>
+    <br>
+    <div>
+        First Name
+        <input type="submit">
+    </div>
+    <br>
+</form>
+
+<!-- END -->
+</body>
+</html>

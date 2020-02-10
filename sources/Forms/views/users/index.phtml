@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Users</h1>
+    <div>
+        <a href="/users/new">add new</a>
+    </div>
+    <br>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <td>ID</td>
+            <td>Email</td>
+            <td>First Name</td>
+        </tr>
+        <?php foreach ($users as $user): ?>
+         <tr>
+             <td><?= $user['id'] ?></td>
+             <td><?= $user['email'] ?></td>
+             <td><?= $user['first_name'] ?></td>
+         </tr>
+        <?php endforeach; ?>
+    </table>
+  </body>
+</html>
