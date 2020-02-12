@@ -2,6 +2,9 @@
 namespace Theory;
 
 /* https://prog-cpp.ru/uml-classes/ */
+
+use function Theory\FileUpload\codeToMessage;
+
 require_once __DIR__.'/src/Application.php';
 require_once __DIR__.'/src/Response.php';
 require_once __DIR__.'/src/Template.php';
