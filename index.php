@@ -23,16 +23,20 @@ $app = new Application();
 
 
 $app->get('/', function (){
-
-    return response(render('index', ['cookies' => print_r($_COOKIE, true)]));
+     session_start();
+    return response(print_r($_SESSION, true));
 });
 
-$app->get('/cookie', function () {
-    setcookie('session-cookie', uniqid());
-    setcookie('persistent-cookie', uniqid(), time() + 10000);
-    setcookie('session-cookie-with-path', uniqid(), 0, '/about');
-    setcookie('session-cookie-for-domain', uniqid(), 0, '', 'www.localhost');
-    setcookie('session-cookie-with-httponly', uniqid(), 0, '', '', false, true);
+$app->get('/session/new', function ($meta, $params) {
+    session_start();
+    $_SESSION = $params;
+    return response()->redirect('/');
+});
+
+
+$app->get('/session/destroy', function ($meta, $params) {
+    session_start();
+    session_destroy();
     return response()->redirect('/');
 });
 
