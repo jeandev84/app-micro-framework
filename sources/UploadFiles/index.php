@@ -80,15 +80,6 @@ $app->post('/users', function ($meta, $params, $attributes) use ($repository) {
 
     error_log(print_r($_FILES, true));
 
-    if(empty($errors))
-    {
-        $repository->insert($user);
-        return response()->redirect('/');
-    }else{
-        return response(render('users/new', ['user' => $user, 'errors' => $errors]))
-            ->withStatus(422); /* code problem with validation */
-    }
-
 });
 
 
